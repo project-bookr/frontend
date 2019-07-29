@@ -4,8 +4,8 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import rootReducer from '../../../Bookr/bookr/src/reducers';
-import App from '../../../Bookr/bookr/src/components/App';
+import rootReducer from './reducers';
+import App from './App';
 
 
 const store = createStore(
