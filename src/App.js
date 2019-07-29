@@ -1,9 +1,9 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
-import Login from "./Components/Login/Login";
-import Register from "./Components/Register/Register";
-import Dashboard from "./Components/Dashboard/Dashboard"
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute.js";
+import Login from "./Components/Login/Login.js";
+import Register from "./Components/Register/Register.js";
+import Dashboard from "./Components/Dashboard/Dashboard.js"
 import "./App.css";
 
 function App() {
