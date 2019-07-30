@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {login} from "../../actions";
+import {connect} from "react-redux";
 
 
 
@@ -15,5 +16,13 @@ const MarketingPage=()=> {
         </div>
 	);
 }
-
-export default MarketingPage;
+const mapStateToProps = ({loggingIn}) => {
+	return {
+	  loggingIn: loggingIn
+	};
+  };
+  
+  export default connect(
+	mapStateToProps,
+	{login}
+  )( MarketingPage);
