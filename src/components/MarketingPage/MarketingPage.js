@@ -4,10 +4,15 @@ import React from 'react';
 
 
 const MarketingPage=()=> {
-	return (
-        <strong>
-        Bookr
-        </strong>
+    return (
+        <div>
+            <button onClick={() => this.props.history.push( "/dashboard" )}>
+            <strong>
+            Bookr
+            </strong>
+            </button>
+            
+        </div>
 	);
 }
 
