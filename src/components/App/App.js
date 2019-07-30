@@ -4,7 +4,6 @@ import Login from "../Login/Login.js";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute.js";
 import Register from "../Register/Register.js";
 import Dashboard from "../Dashboard/Dashboard.js"
-import "./App.css";
 
 function App() {
 	return (
