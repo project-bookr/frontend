@@ -1,5 +1,5 @@
 import axios from "axios";
-import {axiosWithAuth} from '../components2/axiosWithAuth'
+import {axiosWithAuth} from '../components/axiosWithAuth'
 import jwtDecode from "jwt-decode";
 
 export const LOADING_LOGIN = "LOADING_LOGIN";
