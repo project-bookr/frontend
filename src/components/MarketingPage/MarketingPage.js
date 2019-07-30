@@ -1,28 +1,20 @@
 import React from 'react';
-import {login} from "../../actions";
-import {connect} from "react-redux";
+import {Link} from 'react-router-dom'; 
 
 
 
 const MarketingPage=()=> {
     return (
         <div>
-            <button onClick={() => this.props.history.push( "/dashboard" )}>
+            <Link to="/dashboard">
+            <button>
             <strong>
             Bookr
             </strong>
             </button>
-            
-        </div>
+            </Link>
+            </div>
+        
 	);
 }
-const mapStateToProps = ({loggingIn}) => {
-	return {
-	  loggingIn: loggingIn
-	};
-  };
-  
-  export default connect(
-	mapStateToProps,
-	{login}
-  )( MarketingPage);
+export default MarketingPage;

@@ -5,10 +5,12 @@ import jwtDecode from "jwt-decode";
 export const LOADING_LOGIN = "LOADING_LOGIN";
 export const SUCCESS_LOGIN = "SUCCESS_LOGIN";
 export const ERROR_LOGIN = "ERROR_LOGIN";
-export const LOADING_FETCHBOOKS = "LOADING_FETCHBOOKS";
+export const LOGOUT="LOGOUT";
+export const LOADING_FETCHBOOKS="LOADING_FETCHBOOKS";
 export const SUCCESS_FETCHBOOKS = "SUCCESS_FETCHBOOKS";
 export const ERROR_FETCH_BOOKS = "ERROR_FETCH_BOOKS";
-export const LOADING_REGISTER = "LOADING_REGISTER";
+
+export const LOADING_REGISTER="LOADING_REGISTER";
 export const SUCCESS_REGISTER = "SUCCESS_REGISTER";
 export const ERROR_REGISTER = "ERROR_REGISTER";
 
@@ -44,7 +46,11 @@ export const login = (state) => (dispatch) => {
 			});
 		});
 };
-
+export const logout=() => {
+	return {
+		type: LOGOUT
+	};
+};
 export const fetchbooks = () => (dispatch) => {
 	dispatch({type: LOADING_FETCHBOOKS});
 	return axiosWithAuth()
