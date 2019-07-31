@@ -8,7 +8,7 @@ const Library = ({books}) => {
 			{books.map( ( book )=>{
 				return (
 					<div>
-						{book.title}<img src={book.thumbnail} alt={book.isdn}/>
+						{book.title}<img src={book.thumbnail} alt={book.title}/>
 						
 					</div>
 				)
@@ -19,7 +19,7 @@ const Library = ({books}) => {
 
 const mapStateToProps = (state) => {
 	return {
-		books: state.books,
+		books: state.books, 
 	};
 };
 export default connect(
