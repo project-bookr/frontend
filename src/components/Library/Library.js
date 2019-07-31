@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import Dashboard from "../Dashboard/Dashboard";
+
 
 const Library = ({books}) => {
 	return (
@@ -8,7 +8,8 @@ const Library = ({books}) => {
 			{books.map( ( book )=>{
 				return (
 					<div>
-						{book.title}
+						{book.title}<img src={book.thumbnail} alt={book.isdn}/>
+						
 					</div>
 				)
 			})}
@@ -16,7 +17,7 @@ const Library = ({books}) => {
 	);
 };
 
-const mapStateToProps = (state,) => {
+const mapStateToProps = (state) => {
 	return {
 		books: state.books,
 	};

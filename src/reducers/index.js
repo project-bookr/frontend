@@ -9,6 +9,8 @@ import {
 	LOADING_REGISTER,
 	SUCCESS_REGISTER,
 	ERROR_REGISTER,
+	ADDFAV,
+	REMOVEFAV,
 } from "../actions";
 
 const initialState = {
@@ -22,6 +24,7 @@ const initialState = {
 	user: [],
 	username: "",
 	loggingOut: false,
+	favoriteBooks: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -64,9 +67,9 @@ const rootReducer = (state = initialState, action) => {
 		case LOGOUT:
 			console.log(state.token);
 			return {
-				 ...state,
+				...state,
 				logout: true,
-				 token: localStorage.clear()
+				token: localStorage.clear(),
 			};
 		case LOADING_FETCHBOOKS:
 			return {
@@ -83,6 +86,24 @@ const rootReducer = (state = initialState, action) => {
 			return {
 				...state,
 				error: action.payload,
+			};
+		case ADDFAV:
+			const fav = state.books.filter(
+				(book) => book.id === action.payload
+			);
+			return {
+				...state,
+
+				favoriteBooks: [...fav],
+			};
+		case REMOVEFAV:
+			return {
+				...state,
+				favoriteBooks: [
+					...state.favoriteBooks.filter(
+						(books) => books.id !== action.payload
+					),
+				],
 			};
 		default:
 			return state;

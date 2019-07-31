@@ -12,7 +12,10 @@ export const ERROR_FETCH_BOOKS = "ERROR_FETCH_BOOKS";
 
 export const LOADING_REGISTER="LOADING_REGISTER";
 export const SUCCESS_REGISTER = "SUCCESS_REGISTER";
-export const ERROR_REGISTER = "ERROR_REGISTER";
+export const ERROR_REGISTER="ERROR_REGISTER";
+
+export const ADDFAV="ADDFAV";
+export const REMOVEFAV="REMOVEFAV";
 
 export const register = (state) => (dispatch) => {
 	dispatch({type: LOADING_REGISTER});
@@ -51,6 +54,19 @@ export const logout=() => {
 		type: LOGOUT
 	};
 };
+
+export const addFavorite=(id)=> {
+	return {
+		type: ADDFAV,
+		payload:id
+	};
+};
+export const removeFavorite=( id ) => {
+	return {
+		type: REMOVEFAV,
+		payload: id
+	};
+}
 export const fetchbooks = () => (dispatch) => {
 	dispatch({type: LOADING_FETCHBOOKS});
 	return axiosWithAuth()
