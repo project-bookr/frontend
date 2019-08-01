@@ -22,7 +22,7 @@ class Dashboard extends Component {
 		return (
 			<div>
 				<div>
-					<Link to="/library">My Books</Link>
+					<Link to="/library">My Library</Link>
 					<PrivateRoute
 						to="/library"
 						component={Library}

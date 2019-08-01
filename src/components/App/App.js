@@ -7,7 +7,7 @@ import Dashboard from "../Dashboard/Dashboard.js";
 import MarketingPage from "../MarketingPage/MarketingPage";
 import Nav from "../Nav/Nav";
 import Library from "../Library/Library";
-
+import "./App.css"
 const App = () => {
 	return (
 		<Router>

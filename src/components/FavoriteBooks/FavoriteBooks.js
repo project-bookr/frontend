@@ -7,7 +7,7 @@ const Favorites=( {favoritebooks} ) => {
         <div>
         {favoritebooks.map( ( book )=>{
             return (
-                <div>
+                <div >
                     {book.title}
                     <img src={book.thumbnail} alt={book.title} />
                     <button onClick={() => this.remFav( book.id )}>remove</button>

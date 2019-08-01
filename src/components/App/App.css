@@ -1,0 +1,29 @@
+.container{display: flex;
+    margin: auto 1rem;
+    padding: 1rem;
+    /* border: 10px solid transparent; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+
+.card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1.3px 2.5px 7px 2.3px #504561;
+    margin:10px;
+    width:25%;
+    min-width: 300px;
+    height: auto;
+
+}
+
+card.image{
+    box-shadow: 1.3px 2.5px 7px 2.3px #504561;
+    margin:10px;
+    width:100%;
+    height: auto;
+    
+}
