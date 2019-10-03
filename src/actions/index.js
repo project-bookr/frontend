@@ -1,21 +1,22 @@
 import axios from "axios";
-import {axiosWithAuth} from '../components/axiosWithAuth'
+import {axiosWithAuth} from "../components/axiosWithAuth";
 import jwtDecode from "jwt-decode";
 
 export const LOADING_LOGIN = "LOADING_LOGIN";
 export const SUCCESS_LOGIN = "SUCCESS_LOGIN";
 export const ERROR_LOGIN = "ERROR_LOGIN";
-export const LOGOUT="LOGOUT";
-export const LOADING_FETCHBOOKS="LOADING_FETCHBOOKS";
+export const LOGOUT = "LOGOUT";
+export const LOADING_FETCHBOOKS = "LOADING_FETCHBOOKS";
 export const SUCCESS_FETCHBOOKS = "SUCCESS_FETCHBOOKS";
 export const ERROR_FETCH_BOOKS = "ERROR_FETCH_BOOKS";
 
-export const LOADING_REGISTER="LOADING_REGISTER";
+export const LOADING_REGISTER = "LOADING_REGISTER";
 export const SUCCESS_REGISTER = "SUCCESS_REGISTER";
-export const ERROR_REGISTER="ERROR_REGISTER";
+export const ERROR_REGISTER = "ERROR_REGISTER";
 
-export const ADDFAV="ADDFAV";
-export const REMOVEFAV="REMOVEFAV";
+export const ADDFAV = "ADDFAV";
+export const REMOVEFAV = "REMOVEFAV";
+export const TOGGLEFAV = "TOGGLEFAV";
 
 export const register = (state) => (dispatch) => {
 	dispatch({type: LOADING_REGISTER});
@@ -28,7 +29,7 @@ export const register = (state) => (dispatch) => {
 		})
 		.catch((error) => {
 			console.log(error.response);
-			dispatch({type:ERROR_REGISTER, payload: error.response});
+			dispatch({type: ERROR_REGISTER, payload: error.response});
 		});
 };
 
@@ -49,24 +50,29 @@ export const login = (state) => (dispatch) => {
 			});
 		});
 };
-export const logout=() => {
+export const logout = () => {
 	return {
-		type: LOGOUT
+		type: LOGOUT,
 	};
 };
 
-export const addFavorite=(id)=> {
+export const toggleFav = () => {
+	return {
+		type: TOGGLEFAV,
+	}
+};
+export const addFavorite = (id) => {
 	return {
 		type: ADDFAV,
-		payload:id
+		payload: id,
 	};
 };
-export const removeFavorite=( id ) => {
+export const removeFavorite = (id) => {
 	return {
 		type: REMOVEFAV,
-		payload: id
+		payload: id,
 	};
-}
+};
 export const fetchbooks = () => (dispatch) => {
 	dispatch({type: LOADING_FETCHBOOKS});
 	return axiosWithAuth()

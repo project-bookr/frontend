@@ -19,6 +19,7 @@ const Nav= props=> {
                 
                 <Link to='/dashboard'>My DashBoard</Link>
                 <Link to='/login' onClick={()=>props.logout()}>LogOUT</Link>
+                <Link to="/favoritebooks" favoriteBooks={props.favoriteBooks}>FavoriteBooks </Link>
             </div>
         );
     

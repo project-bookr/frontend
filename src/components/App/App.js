@@ -6,8 +6,10 @@ import Register from "../Register/Register.js";
 import Dashboard from "../Dashboard/Dashboard.js";
 import MarketingPage from "../MarketingPage/MarketingPage";
 import Nav from "../Nav/Nav";
-import Library from "../Library/Library";
+import Book from "../Book/Book";
+import SingleBook from '../Book/SingleBook'
 import "./App.css"
+import FavoriteBooks from "../FavoriteBooks/FavoriteBooks.js";
 const App = () => {
 	return (
 		<Router>
@@ -16,11 +18,12 @@ const App = () => {
 					<Nav />
 				</div>
 
-				<Route exact path="/register" component={Register} />
 				<Route exact path="/" component={MarketingPage} />
-				<PrivateRoute exact path="/dashboard" component={Dashboard} />
-				<PrivateRoute exact path="/library" component={Library}/>
+				<Route exact path="/register" component={Register} />
 				<Route exact path="/login" component={Login} />
+				<PrivateRoute exact path="/dashboard" component={Dashboard} />
+				<PrivateRoute exact path="/favoritebooks" component={FavoriteBooks}/>
+				<PrivateRoute exact path="/favoritebooks/:book.id" component={Book}/>
 			</div>
 		</Router>
 	);

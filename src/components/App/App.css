@@ -1,29 +1,65 @@
-.container{display: flex;
-    margin: auto 1rem;
-    padding: 1rem;
-    /* border: 10px solid transparent; */
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-
-
-.card{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 1.3px 2.5px 7px 2.3px #504561;
-    margin:10px;
-    width:25%;
-    min-width: 300px;
-    height: auto;
-
-}
-
-card.image{
-    box-shadow: 1.3px 2.5px 7px 2.3px #504561;
-    margin:10px;
-    width:100%;
-    height: auto;
-    
-}
+                    .container {
+                        display: flex;
+                        margin: auto 1rem;
+                        padding: 1rem;
+                        /* border: 10px solid transparent; */
+                        justify-content: space-evenly;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .isFav {
+                        zoom: 150%;
+                    }
+                    
+                    .cardimage>a {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        background: aliceblue;
+                        box-shadow: 0.3px 0.5px 4px 1px #504561;
+                        margin: 10px;
+                        padding: 1rem;
+                        border-radius: 10px;
+                        min-width: 300px;
+                        width: 30%;
+                        height: auto;
+                    }
+                    
+                    .cardimage {
+                        display: flex;
+                        flex: 0 3 150px;
+                        flex-direction: column;
+                        justify-content: center;
+                        background: #a4b6c5;
+                        box-shadow: 0.3px 0.5px 4px 1px #504561;
+                        margin: 10px;
+                        padding: 1rem;
+                        border-radius: 3px;
+                        min-width: 350px;
+                        width: 30%;
+                        height: auto;
+                    }
+                    
+                    button {
+                        box-shadow: inset -4px -3px 11px 2px black, 0.4px 0.8px 5px 0.2px darkgrey;
+                        border: #4BB4BB 1px inset;
+                        border-radius: 9px;
+                        padding: 1rem;
+                        width: 100%;
+                        margin: .05rem;
+                        text-shadow: -0.1rem -0.1rem 0rem #dcf2ff;
+                        font-size: 1rem;
+                    }
+                    
+                    .cardimage>a>img {
+                        box-shadow: inset -4px -3px 11px 2px black, 4px 8px 10px 1px darkgrey;
+                        border: #4BB4BB 1px inset;
+                        border-radius: 19px;
+                        padding: 1rem;
+                        width: 85%;
+                    }
+                    
+                    body {
+                        background: rgb(131, 58, 180);
+                        background: linear-gradient(93deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 0.989233193277311) 100%);
+                    }

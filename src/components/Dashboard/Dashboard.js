@@ -1,50 +1,46 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-import PrivateRoute from "../PrivateRoute/PrivateRoute.js";
-import {fetchbooks, addFavorite, removeFavorite} from "../../actions/index";
+import {Route,Link} from "react-router-dom";
 
-import Library from "../Library/Library.js";
+import {toggleFav,fetchbooks, addFavorite, removeFavorite} from "../../actions/index";
+
+import FavoriteBooks from "../FavoriteBooks/FavoriteBooks.js";
 
 class Dashboard extends Component {
-	state;
 	componentDidMount() {
 		this.props.fetchbooks();
 		console.log(this.props.books);
 	}
-	addFav(id) {
-		this.props.addFavorite(id);
-	}
+	addFav( id ) {
+		this.props.addFavorite( id );
+		console.log( this.props.favoriteBooks, "b4setState==>thispropsfavoriteBooks" );
+		
+		console.log( this.props, "aftersetstate==>this.props.favoriteBooks" );
+	};  
 	remFav(id) {
 		this.props.removeFavorite(id);
 	}
 	render() {
 		return (
-			<div>
-				<div>
-					<Link to="/library">My Library</Link>
-					<PrivateRoute
-						to="/library"
-						component={Library}
-						books={this.props.books}
-					/>
-				</div>
+			<div >
+				
 				{this.props.books.map((book) => {
 					return (
-						<div key={book.id}>
-							<h6>{book.publisher}</h6>
-							<img src={book.cover} alt={book.title} />
-							<h2>{book.title}</h2>
-							<button onClick={() => this.addFav(book.id)}>
-								addFav
-							</button>
-							<button
-								onClick={() =>
-									this.props.removeFavorite(book.id)
-								}>
-								removeFav
-							</button>
-						</div>
+						<div className="cardimage" key={book.id}>
+							
+
+							<Link to={`/favoritebooks/${book.id}`}>
+								<h6>{book.publisher}</h6>
+								<img src={book.cover} alt={book.title} />
+								<h2>{book.title}</h2>
+							</Link>
+							<div >
+							<button onClick={toggleFav}>add/remove favorite</button>
+							<button onClick={() => this.addFav(book.id)}>addFav</button>
+							<button	onClick={() => this.props.removeFavorite(book.id)}>removeFav</button>
+							</div>
+							
+						</div>                                
 					);
 				})}
 			</div>
@@ -60,5 +56,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
 	mapStateToProps,
-	{fetchbooks, addFavorite, removeFavorite}
+	{fetchbooks, addFavorite, removeFavorite,toggleFav}
 )(Dashboard);
